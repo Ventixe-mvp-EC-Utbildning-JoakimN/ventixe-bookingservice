@@ -22,6 +22,11 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddHttpClient("NotificationService", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7018");
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

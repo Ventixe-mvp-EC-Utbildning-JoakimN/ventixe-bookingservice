@@ -23,9 +23,9 @@ namespace Ventixe.BookingService.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Booking> Create([FromBody] Booking booking)
+        public async Task<ActionResult<Booking>> Create([FromBody] Booking booking)
         {
-            var saved = _bookingService.Create(booking);
+            var saved = await _bookingService.Create(booking);
             return CreatedAtAction(nameof(GetAll), new { id = saved.Id }, saved);
         }
     }
