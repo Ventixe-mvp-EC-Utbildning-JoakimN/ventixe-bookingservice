@@ -18,6 +18,8 @@ namespace Ventixe.BookingService.Services
 
         public async Task<Booking> Create(Booking booking)
         {
+            booking.BookedAt = DateTime.UtcNow;
+
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
 
