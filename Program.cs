@@ -27,7 +27,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddHttpClient("NotificationService", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7018");
+    client.BaseAddress = new Uri("https://ventixe-joakim-ec-api-notifications.azurewebsites.net/");
 });
 
 var app = builder.Build();
